@@ -6,6 +6,15 @@ var previous = 0;
 var resetAndStart = function () {
 	
 	$(".crystal").empty();
+	
+	var images = [
+		"https://cdn2.collective-evolution.com/assets/uploads/2017/02/crystals.jpg", 
+		"https://cdn.instructables.com/FI8/054K/J3OPNXPP/FI8054KJ3OPNXPP.LARGE.jpg", 
+		
+		"https://www.stevenaitchison.co.uk/wp-content/uploads/Healing-Crystals.jpg", 
+		
+		"http://media.beliefnet.com/~/media/photos/holistic-living/galleries/7-crystals-you-need-to-bring-love-into-your-love-life/crystals_intro.jpg"
+	]
 
 	randomResult = Math.floor(Math.random() * 101 ) + 19;
 	//console.log (random)
@@ -22,8 +31,11 @@ var resetAndStart = function () {
 			"class": 'crystal', 'data-random': random
 
 			});
-
-			crystal.html(random);
+			crystal.css({
+				"background-image":"url('" + images[i] + "')",
+				"background-size": "cover"
+				
+			});
 
 		$(".crystals").append(crystal);	
 	}

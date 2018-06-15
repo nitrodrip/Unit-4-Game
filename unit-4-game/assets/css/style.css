@@ -1,4 +1,4 @@
-.crystal {
+.crystals {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;	
@@ -7,4 +7,18 @@
 	border:1px solid green;
 	height:200px;
 	width:200px;	
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.5);
+	transition: box-shadow 1s, transform 2s;
+}
+.crystal:hover{
+	box-shadow: 15px 15px 15px rgb(0, 0, 0, 0.5);
+	transform: translate(5px, 80px);
+	cursor: pointer;
+	transition: box-shadow 1s, transform 2s;
+}
+
+img {
+	width: 50px;	
+	
 }
