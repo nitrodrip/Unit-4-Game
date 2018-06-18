@@ -1,3 +1,13 @@
+body {
+	background: grey;
+	
+}
+
+p {
+	text-decoration-color: aqua;
+	
+}
+
 .crystals {
 	display: flex;
 	justify-content: space-around;

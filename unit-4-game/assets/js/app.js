@@ -1,7 +1,8 @@
-var randomResult;
+var random_Result;
 var lost = 0;
 var win = 0;
 var previous = 0;
+
 
 var resetAndStart = function () {
 	
@@ -13,18 +14,16 @@ var resetAndStart = function () {
 		
 		"https://www.stevenaitchison.co.uk/wp-content/uploads/Healing-Crystals.jpg", 
 		
-		"http://media.beliefnet.com/~/media/photos/holistic-living/galleries/7-crystals-you-need-to-bring-love-into-your-love-life/crystals_intro.jpg"
-	]
-
-	randomResult = Math.floor(Math.random() * 101 ) + 19;
+		"http://media.beliefnet.com/~/media/photos/holistic-living/galleries/7-crystals-you-need-to-bring-love-into-your-love-life/crystals_intro.jpg"]
+	
+	random_Result = Math.floor(Math.random() * 101 ) + 19;
 	//console.log (random)
 
-	$("#result").html('Random Result: ' + randomResult);
+	$("#result").html('Random Result: ' + random_Result);
 
 	for(var i = 0; i < 4; i++){
 	
 		var random = Math.floor(Math.random() * 11) +1;
-		//console.log(random);
 
 		var crystal = $("<div>");
 			crystal.attr({
@@ -33,36 +32,32 @@ var resetAndStart = function () {
 			});
 			crystal.css({
 				"background-image":"url('" + images[i] + "')",
-				"background-size": "cover"
+				"background-size":"cover"
 				
 			});
 
 		$(".crystals").append(crystal);	
 	}
+	console.log (crystal)
 	
 	$("#previous").html("Total Score " + previous);
 }
 
-
-
 resetAndStart();
 
-////var reset function () {
-//	
-//}
 
 $(document).on('click', ".crystal", function () {
 	
 	
-	var num = parseInt($(this).attr('data-random'))
+	var num = parseInt($(this).attr('data-random'));
 	
 	previous += num;
 	
 	$("#previous").html("Total Score: " + previous);
 	
-	console.log (previous);
+	console.log(previous);
 	
-	if(previous > randomResult) {
+	if(previous > random_Result) {
 		
 		lost++;
 		
@@ -70,21 +65,15 @@ $(document).on('click', ".crystal", function () {
 		
 		previous = 0;
 		
-		
-//		console.log("You lost!!");
-		
 		resetAndStart();
 	}
-	
-	else if (previous === randomResult) {
+	else if (previous === random_Result) {
 		
 		win++;
 		
 		$("#win").html("You Win: " + win);
 		
 		previous = 0;
-		
-//		console.log ("You Win!!");
 		
 		resetAndStart();
 
