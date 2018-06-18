@@ -17,7 +17,6 @@ var resetAndStart = function () {
 		"http://media.beliefnet.com/~/media/photos/holistic-living/galleries/7-crystals-you-need-to-bring-love-into-your-love-life/crystals_intro.jpg"]
 	
 	random_Result = Math.floor(Math.random() * 101 ) + 19;
-	//console.log (random)
 
 	$("#result").html('Random Result: ' + random_Result);
 
@@ -38,7 +37,7 @@ var resetAndStart = function () {
 
 		$(".crystals").append(crystal);	
 	}
-	console.log (crystal)
+	console.log (resetAndStart)
 	
 	$("#previous").html("Total Score " + previous);
 }
@@ -48,20 +47,19 @@ resetAndStart();
 
 $(document).on('click', ".crystal", function () {
 	
-	
+	//Creates random result each round
 	var num = parseInt($(this).attr('data-random'));
 	
 	previous += num;
 	
+	// Updates score as crystals are selected
 	$("#previous").html("Total Score: " + previous);
-	
-	console.log(previous);
 	
 	if(previous > random_Result) {
 		
 		lost++;
 		
-		$("#lost").html("You Lost: " + lost);
+		$("#lost").html("You've Lost: " + lost);
 		
 		previous = 0;
 		
@@ -71,7 +69,7 @@ $(document).on('click', ".crystal", function () {
 		
 		win++;
 		
-		$("#win").html("You Win: " + win);
+		$("#win").html("You've Won: " + win);
 		
 		previous = 0;
 		

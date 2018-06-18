@@ -3,10 +3,7 @@ body {
 	
 }
 
-p {
-	text-decoration-color: aqua;
-	
-}
+
 
 .crystals {
 	display: flex;
@@ -30,5 +27,19 @@ p {
 
 img {
 	width: 50px;	
+	
+}
+#heading {
+	font-size: 50px;
+	text-shadow: 30px;
+	text-shadow: 1px 1px #ff0000;
+	text-align: center;
+
+}
+
+#gameRules {
+	font-size: 20px;
+	text-align: center;
+	padding: inherit;
 	
 }
